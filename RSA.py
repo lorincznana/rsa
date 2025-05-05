@@ -52,7 +52,7 @@ def isPrime(n):
 
     #Ha akármelyikre Composite jön ki akkor nem lehet prím már.
     for i in range(n):
-        a = random.randint(2, n-2)
+        a = random.randint(2, n-2) #tartományban kell lennie
     if millerrabin(n, a) == "Composite":
         return "Composite"
     return "Probably prime"
@@ -67,7 +67,7 @@ def crt(c, d, p, q):
 
     gcd, y1, y2 = ExtendedEuclid(M1, M2)
     m = (c1 * M1 * y1 + c2 * M2 * y2) % M
-    return m
+    return m  #visszafejtett üzenet
 
 
 #prímszám generáló
@@ -103,7 +103,7 @@ def rsakey():
     return e, d, n, p, q
 
 
-#m^3 mod n
+#m^e mod n
 def encrypt(m, e, n):
     return (powerMod(m, e, n))
 
@@ -144,7 +144,3 @@ if __name__ == "__main__":
 
     print("Aláírás: ", alairas)
     print("Ellenőrzés: ", ellenorzes)
-
-
-
-
